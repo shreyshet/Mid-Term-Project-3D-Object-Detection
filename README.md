@@ -50,5 +50,43 @@ Below shows the vehicles at different locations and their visibility.
 * Side doors and windows, rear bumper, tires, front bonnet is visible  
 
 
-### 
+### ID S2 EX1 
+![ids2ex1_v1](results/s2ex1/pcl_f2.png)
+
+### ID S2 EX2 
+![ids2ex2_v1](results/s2ex2/all_compare.png)
+* BEV Image shows different normalization of Range values based upon different %ile and max-min
+
+![ids2ex2_v2](results/s2ex2/955_982_closeup.png)
+* BEV Image shows a close look at normlization comparison between 95-5 % ile and 98-2 % ile. 98-2 %ile shows no clippings or close to clipping and hence is chosen as the base.
+
+### ID S2 EX3 
+
+![ids2ex3_v1](results/s2ex3/height_img.png)
+* BEV Image with Height  
+
+![ids2ex3_v2](results/s2ex3/height_img_values.png)
+* BEV Image with Height (closer looks)
+
+### ID S3 EX1-5 
+
+![ids3ex15_v1](results/s2ex3/detections.png)
+* Detection Variable
+
+### ID S3 EX2 
+
+![ids3ex2_v1](results/s3ex2/detect_images_51.png)
+* Detection results with bounding box on BEV Lidar and Camera  
+
+![ids3ex2_v2](results/s3ex2/v2.png)
+* Detection output (red) is overlayed with ground truth (green)  
+
+### ID S4 EX2 
+
+![ids3ex2_v1](results/s4ex2/s4ex3.png)
+* Precision nad recall: when the detection algorithm is run over 100 images. 
+
+![ids3ex2_v2](results/s4ex2/S4EX3_truedetection.png)
+* Precision and recall: when ground truths are used, to check the code calculating the values correctly.
+
 
