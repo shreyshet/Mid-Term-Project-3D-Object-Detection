@@ -4,3 +4,8 @@
 - Do you see any benefits in camera-lidar fusion compared to lidar-only tracking (in theory and in your concrete results)?
 - Which challenges will a sensor fusion system face in real-life scenarios? Did you see any of these challenges in the project?
 - Can you think of ways to improve your tracking results in the future?
+
+
+Video Submission for final tracking
+https://user-images.githubusercontent.com/16174913/222013937-a4127b27-73b4-4d0d-b7bd-a4fbe98e62d8.mp4
+
