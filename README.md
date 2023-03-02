@@ -25,28 +25,37 @@ In this step, the track management algorithm is implemented. Each unassigned mea
 
 Clearly there is a large RMSE, describing a poor performance. This can be because the object is moving relatively fast through the frames and the Prediction is not able to track it properly.
 
+Personally, I found this part a little bit difficult to implement. This section was written in a more intuitive than theoretic. I had to look the system as state machine and had to deal with thresholds. This difficulty is may be because I take interest in control systems and it generally involves dynamic systems with continous domain. That is why I found particularly EKF more easy to comprehend than this.
+
 ## Step 3: Track association `association.py`
 
 In this step, the algorithm makes sure that with each new timestep, different tracks are associated with their respective ground truth. This step only uses the lidar measurements.
 
-![Camera Track : Step 3](results/end_module/Step3_CameraTrack.png)
-*(Left) Camera output with bounding box predicted by EKF. (Right) Tracking in BEV* 
-
-![RMSE : Step 3](results/end_module/Step3_RMSE.png)
-*RMSE plot for prediction error with respect to ground truth*
-
-![RMSE : Step 3](results/end_module/Step3_CameraTrack_ghosttrack.png)
+![RMSE : Step 3](results/end_module/Step3_trackingRMSE_.png)
 *The tracking shows a ghost output *
 
+Below Shows the Video output after step 3
 
-## Step 4:
-Video Submission for final tracking
+https://user-images.githubusercontent.com/16174913/222326607-f3c9a398-f009-4023-83ac-53efe13da70f.mp4
 
-![Camera Track : Step 4](results/end_module/Step3_CameraTrack.png)
-*(Left) Camera output with bounding box predicted by EKF. (Right) Tracking in BEV* 
+## Step 4: Camera+Lidar Fusion `measurements.py`
 
-![RMSE : Step 4](results/end_module/Step3_RMSE.png)
+Finally in this step, the nonlinear measurement model for camera is implemented.  
+
+![RMSE : Step 4](results/end_module/Step4_RMSE.png)
 *RMSE plot for prediction error with respect to ground truth*
 
+The Video after final step can be observed as below
+
 https://user-images.githubusercontent.com/16174913/222013937-a4127b27-73b4-4d0d-b7bd-a4fbe98e62d8.mp4
+
+## Lidar Only vs Camera+Lidar
+In theory for kalman filter, the prediction step increases the state covariance whereas the update step decreases it. And more the number of sensors implies more the update steps as compared to prediction, and hence always gives better the estimate. Intuitively, more measurement brings more information about the system.
+Comparing the outputs from Step 3 and Step 4 show that adding the Camera model does help an improvement in tracking performance for few tracks (distant car at track 11). This can be observed through their respective RMSE plots as well.
+
+## Challenges in real life-scenerio
+- Here only straight motion of the objects was observed. Vehicles can move on ramps, can stop, do a lane change etc.   
+- The sensor noise of measurements can vary depending upon the environment. For example, a camera measurments might be be noise during nights or Lidar sensor might detect false positives in occulded road. The training dataset here contained a simple scenerio.
+- For other objects like, Pedestrian, cyclists etc, the motion prediction model might not be suffice and can be improved upon.    
+
 
