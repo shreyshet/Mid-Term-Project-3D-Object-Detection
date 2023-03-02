@@ -56,6 +56,10 @@ Comparing the outputs from Step 3 and Step 4 show that adding the Camera model d
 ## Challenges in real life-scenerio
 - Here only straight motion of the objects was observed. Vehicles can move on ramps, can stop, do a lane change etc.   
 - The sensor noise of measurements can vary depending upon the environment. For example, a camera measurments might be be noise during nights or Lidar sensor might detect false positives in occulded road. The training dataset here contained a simple scenerio.
+- Any fault on the sensors, can cause the system to loose tracking, like mud on camera or lidar failure. 
 - For other objects like, Pedestrian, cyclists etc, the motion prediction model might not be suffice and can be improved upon.    
 
+## Improvements
+- For this particular project, use of other CNN models for object detection can be tried out.
+- The parameters can be better tuned to improve the RMSE
 
